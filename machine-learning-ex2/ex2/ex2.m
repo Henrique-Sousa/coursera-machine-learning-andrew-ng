@@ -63,6 +63,20 @@ X = [ones(m, 1) X];
 % Initialize fitting parameters
 initial_theta = zeros(n + 1, 1);
 
+%test
+printf('size initial theta: ');
+disp(size(initial_theta));
+h_theta = sigmoid(X*initial_theta);
+printf('Cost function test:  J = ');
+disp((1/m).*sum(-y.*log(h_theta))-(1-y).*log(1-h_theta));
+printf('size h_theta: ');
+disp(size(h_theta));
+printf('size y: ');
+disp(size(y));
+printf('size X: ');
+disp(size(X));
+%(1/m).*(h_theta - y)*X;
+
 % Compute and display initial cost and gradient
 [cost, grad] = costFunction(initial_theta, X, y);
 
